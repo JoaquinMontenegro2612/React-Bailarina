@@ -1,12 +1,28 @@
-import {Heading} from '@chakra-ui/react'
-import {ItemCount} from '../ItemCount'
+import {Heading, Spinner} from '@chakra-ui/react'
+import { useState, useEffect } from 'react'
+import { productos } from '../../assets/productos'
+
+import ItemList from '../itemList/itemList'
+
 const ItemListContainer = ({gretting}) => {
+    const [listaDeProductos, setlistaDeProductos] = useState([])
+    const [loading, setLoading] = useState(false)
+  
+    useEffect(() => {
+      customFetch(productos)
+        .then(data => {
+          setLoading(true)
+          setListProducts(data)})
+    }, [])
+
+
   return (
-    <>
+  <>
     <Heading>{gretting}</Heading>
-    <ItemCount initial={1} stock={5} onAdd={()=> {}}/>
-    </>
+    <ItemList listaDeProductos={listaDeProductos}/>
+    <Heading as="div" >{!loading && <Spinner/>}</Heading>
+  </>
   )
 }
 
-export {ItemListContainer}
+export {WItemListContainer}
