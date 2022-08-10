@@ -1,12 +1,13 @@
-const Item = ({products}) => {
+const Item = ({productos}) => {
     return(
-        <div id="productConteiner">
+        <div id="productContainer">
 
-        <h1 id="tittleProduct">{products.product}</h1>
-        <img id="imagenes" src={products.image} alt="imagen" />
-        <p id="desProduct">{products.description}</p>
-        <p id="desProduct"> ${products.price} </p>
-        <button id="butDetalle">Ver detalle</button>
+        <h1 id="titulo">{productos.producto}</h1>
+        <img id="imagenes" src={productos.image} alt="imagen" />
+        <p id="detalle">{productos.detalle}</p>
+        <p id="descripcion">{productos.descripcion}</p>
+        <p id="precio"> ${productos.precio} </p>
+        <button id="detalle">Ver detalle</button>
         </div>
         
     )
