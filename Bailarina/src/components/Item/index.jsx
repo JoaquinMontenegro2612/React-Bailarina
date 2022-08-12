@@ -1,14 +1,20 @@
+import { VStack, Button, Text, Image,Link, Heading } from "@chakra-ui/react"
 const Item = ({productos}) => {
     return(
-        <div id="productContainer">
+        
+        <VStack id="productContainer">
 
-        <h1 id="titulo">{productos.producto}</h1>
-        <img id="imagenes" src={productos.image} alt="imagen" />
-        <p id="detalle">{productos.detalle}</p>
-        <p id="descripcion">{productos.descripcion}</p>
-        <p id="precio"> ${productos.precio} </p>
-        <button id="detalle">Ver detalle</button>
-        </div>
+            <Heading id="titulo">{productos.producto}</Heading>
+            <Image id="imagenes" src={productos.image} alt="imagen">
+                </Image>
+                <Text id="detalle">{productos.detalle}</Text>
+                <Text id="descripcion">{productos.descripcion}</Text>
+                <Text id="precio"> ${productos.precio} </Text>
+                <Button id="detalle">
+                <Link>Ver detalle</Link>
+                </Button>
+        
+        </VStack>
         
     )
 }
