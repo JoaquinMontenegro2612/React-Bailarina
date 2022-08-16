@@ -1,19 +1,23 @@
-import { HStack, Spacer, Link, Image, Heading, Wrap, WrapItem } from '@chakra-ui/react'
+import { HStack, Image, Heading, Spacer} from '@chakra-ui/react'
 import logo from '../../assets/logo.jpg'
-import CartWidget from '../CartWidget'
+import CartWidget from './CartWidget'
+import {NavLink} from 'react-router-dom'
 
 const Navbar = () => {
     return(
     <HStack> 
-        <HStack direction='between'>
-        <Image boxSize='100px'  borderRadius='full' src={logo} alt="logo" />
-        <Heading size='lg' fontSize='50px'>
-            Bailarina
-        </Heading>
-            <Link>Sobre Nosotros</Link>
-            <Link>Catalogo</Link>
-            <Link>Contacto</Link>
-            <CartWidget/>
+        <NavLink to='/'>
+            <img src={logo} alt='logo' width={"100px"}/>
+        </NavLink>
+        <Spacer/>
+        <HStack>
+            <NavLink to='categoria/directo'>Directos</NavLink>
+            <NavLink to='categoria/shacked'>Shacked
+            </NavLink>
+            <NavLink to='categoria/batido'>
+                Batidos
+            </NavLink>
+                <CartWidget/>
         </HStack>
     </HStack>
     )
