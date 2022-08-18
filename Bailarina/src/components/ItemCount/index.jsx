@@ -1,18 +1,20 @@
-import { HStack, Button, Text } from '@chakra-ui/react'
-import { useState } from 'react';
+import {VStack, Button, Text, NumberInput,NumberInputField,NumberInputStepper,NumberIncrementStepper,NumberDecrementStepper,} from '@chakra-ui/react'
+import { useState } from 'react'
+
 const ItemCount = ({ initial, stock, onAdd}) => {
-const [count, setCount]= useState(initial)  
-const sumar = () => count < stock && setCount (count + 1)
-const restar = () => count > initial && setCount (count - 1)
-
+    const [count, setCount] = useState=(initial)
+    const NumberIncrementStepper =()=> count< stock 
     return (
-        <HStack>
-            <Button variant='ghost' colorScheme='whatsapp' size='sm' onClick={restar}>-</Button>
-            <Text>{count}</Text>
-            <Button variant='ghost' colorScheme='whatsapp' size='sm' onClick={sumar}>+</Button>
-            <Button colorScheme='red' size='sm'>Agregar al Carrito</Button>
-
-        </HStack>
+        <VStack>
+                <NumberInput size='md' maxW={24} defaultValue={0} min={1} >
+                    <NumberInputField />
+                        <NumberInputStepper>
+                            <NumberIncrementStepper />
+                            <NumberDecrementStepper />
+                        </NumberInputStepper>
+                </NumberInput>
+            <Button colorScheme='transparent' variant='outline' size='lg' >Agregar al Carrito</Button>
+        </VStack>
 )
 }
 

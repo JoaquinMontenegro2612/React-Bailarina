@@ -9,7 +9,9 @@ const ItemDetailContainer = () => {
 
     const [listaDeProducto, setListaDeProducto] = useState ({})
     const [loading, setLoading] = useState (true)
-    const {id}= useParams()    
+
+    const {id}= useParams()  
+
     useEffect(()=>{
         setLoading(true)
         customFetch(productos)

@@ -1,63 +1,81 @@
 export const productos = [
 {   id: 1,
-    image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1571850362439-UPU4EXFFXO2G77ELGDP7/Wandering-Barman_Bottle_Swipe-Right_V3.png?format=750w',
+    image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572038572145-87RYG8X9AKDTCR9LD7S4/Swipe+Right?format=500w',
     producto:'SWIPE RIGHT',
     categoria:"directo",
     detalle:'Date infused Old Fashioned',
     descripcion:'All natural dates replace sugar in this take on a classic infused in bourbon and pared with aromatic and orange bitters. Rich, Boozy, Aromatic.',
     precio:400,
     stock:6,
-    initial:1
+    initial:1,
+    color:"rgb(227, 147, 156)"
     },
     {   id: 2,
-        image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1571864857908-ZV49LMQ5U0O6SHC92KBW/Wandering-Barman_Bottle_Boomerang_V4.png?format=750w',
-        producto:'Boomerang',
+        image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035118091-LFZY7ZSPE0AEGO9A71NX/Wandering-Barman_Bottle_Boomerang.png?format=500w',
+        producto:'BOOMERANG',
         categoria:"shacked",
         detalle:'Burnt Maple Old Fashioned',
         descripcion:'Hickory and Spiced Maple balance the bourbon with a touch of orange bitters for complexity. Robust, Smokey, Warm.',
         precio:400,
         stock:6,
-        initial:1
+        initial:1,
+        color:"rgb(150, 155, 174)"
         },
         {   id: 3,
-            image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1571864301355-PHEHBZ4XH4QFP75ECOYN/Wandering-Barman_Bottle_Miss-Casanova.png?format=750w',
-            producto:'MISS CASANOVA',
+            image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016074179-43NNDWEBAKRN08Q7E779/La+Nina?format=500w',
+            producto:'LA NIÑA',
             categoria:"batido",
-            detalle:'Spicy Hibiscus Daiquiri',
-            descripcion:'Hibiscus flowers and orange provide an aromatic twist, while chipotle bring the heat in this rum classic. Smoky, Spicy, Tart.',
-            precio:500,
-            stock:8,
-            initial:1
-            },
+            detalle:'Marigold & Kaffir Lime Margarita',
+            descripcion:'Marigold and Kaffir Lime bring a botanical twist to this refined style of Margarita.',
+            precio:600,
+            stock:15,
+            initial:1,
+            color:"rgb(239, 239, 229)"
+            }
+        ,
             {   id: 4,
-                image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1571864172350-94QPRVW133PVDLAA5FHW/Wandering-Barman_Bottle_FOMO_v5.png?format=750w',
+                image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035653967-FG37EMPW6EO4CFC2FFEE/Wandering-Barman_Bottle_FOMO.png?format=500w',
                 producto:'FOMO',
                 categoria:"",
                 detalle:'Organic Vodka Pineapple Sling',
                 descripcion:'Pineapple and turmeric combine to create an earthy yet refreshing tropical profile, backed up with a touch of heat from the flavorful Hatch Green Chile. Tropical, Vegetal, Heat. ',
                 precio:800,
                 stock:10,
-                initial:1
+                initial:1,
+                color:"rgb(236, 180, 36)"
                 },
                 {   id: 5,
-                    image:'https://daily.sevenfifty.com/app/uploads/2019/04/SFD_Bottled_Cocktails_1_btlsvc_2520x1420_.jpg',
+                    image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035510623-8H7S1POYFTF2BI2A0T89/Wandering-Barman_Bottle_Socialite.png?format=500w',
                     producto:'SOCIALITE',
                     categoria:"",
                     detalle:'Directo',
                     descripcion:'Gin leads with fresh cucumber and elderflower to back it up. Celery bitters round out this floral, botanical cocktail. Zesty, Boozy, Refreshing.',
                     precio:600,
                     stock:15,
-                    initial:1
+                    initial:1,
+                    color:"rgb(144, 186, 106)"
                     },
                     {   id: 6,
-                        image:'',
+                        image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016118895-CDH5YKQ7EG5Z8RGF8HHC/Wandering-Barman_Bottle_Iron-Lady.png?format=500w',
                         producto:'IRON LADY',
                         categoria:"",
                         detalle:'Rose Gin & Hops Sling',
                         descripcion:'Rose and citrus provide a floral refreshing start, followed by the hops’ delicate, bitter dry finish. Floral, Bright, Fruit.',
                         precio:600,
                         stock:15,
-                        initial:1
-                        }
+                        initial:1,
+                        color:"rgb(225, 96, 78)"
+                        },
+                            {   id: 7,
+                                image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016793130-HMDHB4QNBU2AUKUH9XVE/Wandering-Barman_Bottle_Miss-Casanova.png?format=500w',
+                                producto:'MISS CASANOVA',
+                                categoria:"",
+                                detalle:'Spicy Hibiscus Daiquiri',
+                                descripcion:'Hibiscus flowers and orange provide an aromatic twist, while chipotle bring the heat in this rum classic. Smoky, Spicy, Tart.',
+                                precio:500,
+                                stock:8,
+                                initial:1,
+                                color:"rgb(37, 37, 37)" 
+                                }
 
 ]
