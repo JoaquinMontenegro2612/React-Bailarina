@@ -8,8 +8,9 @@ export const productos = [
     precio:400,
     stock:6,
     initial:1,
-    color:"rgb(227, 147, 156)"
-    },
+    color:"rgb(227, 147, 156)",
+    colorLetra:"#000000"
+},
     {   id: 2,
         image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035118091-LFZY7ZSPE0AEGO9A71NX/Wandering-Barman_Bottle_Boomerang.png?format=500w',
         producto:'BOOMERANG',
@@ -19,8 +20,9 @@ export const productos = [
         precio:400,
         stock:6,
         initial:1,
-        color:"rgb(150, 155, 174)"
-        },
+        color:"rgb(150, 155, 174)",
+        colorLetra:"#000000"
+    },
         {   id: 3,
             image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016074179-43NNDWEBAKRN08Q7E779/La+Nina?format=500w',
             producto:'LA NIÑA',
@@ -30,9 +32,9 @@ export const productos = [
             precio:600,
             stock:15,
             initial:1,
-            color:"rgb(239, 239, 229)"
-            }
-        ,
+            color:"rgb(239, 239, 229)",
+           colorLetra:"#000000"       
+        },
             {   id: 4,
                 image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035653967-FG37EMPW6EO4CFC2FFEE/Wandering-Barman_Bottle_FOMO.png?format=500w',
                 producto:'FOMO',
@@ -42,8 +44,9 @@ export const productos = [
                 precio:800,
                 stock:10,
                 initial:1,
-                color:"rgb(236, 180, 36)"
-                },
+                color:"rgb(236, 180, 36)",
+                colorLetra:"#000000"
+            },
                 {   id: 5,
                     image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035510623-8H7S1POYFTF2BI2A0T89/Wandering-Barman_Bottle_Socialite.png?format=500w',
                     producto:'SOCIALITE',
@@ -53,8 +56,9 @@ export const productos = [
                     precio:600,
                     stock:15,
                     initial:1,
-                    color:"rgb(144, 186, 106)"
-                    },
+                    color:"rgb(144, 186, 106)",
+                    colorLetra:"#000000"
+                },
                     {   id: 6,
                         image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016118895-CDH5YKQ7EG5Z8RGF8HHC/Wandering-Barman_Bottle_Iron-Lady.png?format=500w',
                         producto:'IRON LADY',
@@ -64,8 +68,9 @@ export const productos = [
                         precio:600,
                         stock:15,
                         initial:1,
-                        color:"rgb(225, 96, 78)"
-                        },
+                        color:"rgb(225, 96, 78)",
+                        colorLetra:"#000000"
+                    },
                             {   id: 7,
                                 image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016793130-HMDHB4QNBU2AUKUH9XVE/Wandering-Barman_Bottle_Miss-Casanova.png?format=500w',
                                 producto:'MISS CASANOVA',
@@ -75,7 +80,7 @@ export const productos = [
                                 precio:500,
                                 stock:8,
                                 initial:1,
-                                color:"rgb(37, 37, 37)" 
+                                color:"rgb(37, 37, 37)",     
+                                colorLetra:"#ffffff"
                                 }
-
 ]

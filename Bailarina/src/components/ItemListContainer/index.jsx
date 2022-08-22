@@ -5,7 +5,7 @@ import { customFetch } from '../../assets/customFetch'
 import ItemList from '../itemList/itemList'
 import {useParams} from 'react-router-dom'
 
-const ItemListContainer = ({gretting}) => {
+const ItemListContainer = () => {
     const [listaDeProductos, setListaDeProductos] = useState([])
     const [loading, setLoading] = useState(false)
   
@@ -29,7 +29,6 @@ const ItemListContainer = ({gretting}) => {
 
   return (
   <>
-    <Heading>{gretting}</Heading>
     <Heading>{!loading && <Spinner/>}</Heading>
     <ItemList listaDeProductos={listaDeProductos}/>
   </>

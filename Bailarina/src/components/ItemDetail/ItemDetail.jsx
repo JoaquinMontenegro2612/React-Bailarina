@@ -1,57 +1,53 @@
-import { Box, Image, Badge, Text, Stack, HStack, Button, useColorMode, FormControl, FormLabel,Select} from "@chakra-ui/react"
-import Boomerang from '../../assets/Boomerang.png'
-// import ItemCount  from '../ItemCount/index'
+import { Box, Image, Badge, Text, Stack, HStack, FormControl, FormLabel,Select,Button} from "@chakra-ui/react"
+import {ItemCount}  from '../ItemCount'
+import { useState } from 'react'
+import {NavLink} from 'react-router-dom'
 const ItemDetail = ({ listaDeProducto }) => {
-    const { imagen, producto, precio, stock, descripcion, initial}= listaDeProducto
-    const {colorMode} = useColorMode();
-    const bgColor ={light:'gray.200', dark:'gray.700'};
-    const textColor ={light:'gray.500', dark:'gray.100'};
 
+    const[isAdded,setIsAdded]= useState(false)
+    
+    const onAdd=()=>{
+    setIsAdded(true)
+}
     return(
-        <HStack bg='blue.500'>
-            <Box
-            w='400px'
-            rounded='20px'
-            overflow='hidden'
-            boxShadow='sm'
-            bg={bgColor[colorMode]}
-            mx={500}
-            my={100}
-            >
-                <Image src={Boomerang} alt="Cover"/>
+        <HStack bg={listaDeProducto.color} color={listaDeProducto.colorLetra}>
+                <Image src={listaDeProducto.image} alt="Cover"/>
                 <Box p={5}>
-                        <Stack isInline align='baseline' >
-                            <Badge variant='solid' variantcolor='teal' rounded='full' px={2}>
-                            No Se Que Poner
-                            </Badge>
-                                <Badge variant='solid' variantcolor='teal' rounded='full' px={2}>
-                                Estoy a punto de llorar 
-                                </Badge>
-                                    <Text textTransform='uppercase' fontSize='sm' color='gray.500' letterSpacing='wide'>lala </Text>
-                        </Stack>
-                        <Text as='h3' fontWeight='semibold' fontSize='xl' my={2} >jajaja</Text>
-                            <Text fontWeight='light' fontSize='md'>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae suscipit, ad illo perspiciatis hic distinctio eos molestiae magnam delectus unde dolorum earum ipsa fugiat eveniet ex dolore excepturi illum totam.
-                            </Text>
-                        <Stack isInline justify='space-between'>
-                            <Text fontWeight='bold' fontSize='lg'>
-                                $200
-                            </Text>
-                                <Text fontWeight='semibold' fontSize='lg'>aca va a ir el stock variable
-                                </Text>
+                        <Badge align='baseline'>
+                        <Text textTransform='uppercase' fontSize='xl' color='gray.500' letterSpacing='wide'>Detalle del producto</Text>
+                        </Badge>
+                        <Text as='h3' fontWeight='semibold' fontSize='xl' my={2} >{listaDeProducto.detalle}</Text>
+                            <Text fontWeight='bold' fontSize='2xl'>{listaDeProducto.descripcion}</Text>
+                        <br/>
+                        <Stack justify='space-around'>
+                                <Text fontWeight='semibold' fontSize='xl'>En este momento nos quedan {listaDeProducto.stock} en stock</Text>
                         </Stack>
                 </Box>
-                <Box textAlign='center'>
+                <Box textAlign='center' pr='10'fontWeight='bold'>
+                <br/>
+                <Box>
+                    <Text fontWeight='light' fontSize='xl'>Precio por unidad</Text>
+                <Text id="precio" fontWeight='light' fontSize='xl'> ${listaDeProducto.precio}</Text>
+                </Box>
                 <FormControl>
-                    <FormLabel>Medidas de tu botella</FormLabel>
-                    <Select placeholder='Selecciona la medida' bg='darkblue' color='yellow.500'>
+                    <FormLabel fontWeight='light' fontSize='xl'>Medidas de tu botella</FormLabel>
+                    <Select placeholder='Selecciona la medida  ' bg={listaDeProducto.color}  fontWeight='light' fontSize='xl'>
                     <option>250 ML</option>
                     <option>500 ML</option>
                     </Select>
                 </FormControl>
-                <Button colorScheme='blue' size='lg' my='3' boxShadow='sm' _hover={{boxShadow:'md'}} _active={{boxShadow:'lg'}}>Comprar</Button>
+                <br/>
+                {
+                    isAdded ? 
+                    <NavLink to='/Cart'>
+                        <Button> Ir al Carrito</Button>
+                    </NavLink>
+                    :
+                    <ItemCount initial={listaDeProducto.initial} stock={listaDeProducto.stock} onAdd={onAdd} />
+
+                }
+                {/* <Button colorScheme='blue' size='lg' mt='3' boxShadow='sm' _hover={{boxShadow:'md'}} _active={{boxShadow:'lg'}}>Comprar</Button> */}
                 </Box>
-            </Box>
         </HStack>
 
         
