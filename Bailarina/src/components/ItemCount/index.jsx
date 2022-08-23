@@ -5,12 +5,13 @@ const ItemCount = ({ initial, stock, onAdd}) => {
     const [count, setCount] = useState(initial)
     const aumentar =()=> count < stock && setCount (count +1)
     const restar   =()=> count > initial && setCount (count -1) 
+    const handleClick=() => {onAdd(count)}
     return (
         <HStack>
                 <Button size='md' height='20px' width='50px' border='2px' borderColor='transparent' onClick={restar} >-</Button>
                 <Text>{count}</Text>
                 <Button size='md' height='20px' width='50px' border='2px' borderColor='transparent' onClick={aumentar}>+</Button>
-            <Button  variant='outline' size='lg' onClick={onAdd}>Agregar al Carrito</Button>
+            <Button  variant='outline' size='lg' onClick={handleClick}>Agregar al Carrito</Button>
         </HStack>
 )
 }

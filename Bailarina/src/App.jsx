@@ -4,10 +4,12 @@ import {ItemListContainer} from './components/ItemListContainer/index'
 import { ItemDetailContainer } from '../src/components/ItemDetailContainer/Index'
 import { BrowserRouter,Routes, Route,} from 'react-router-dom'
 import { Cart } from './components/Cart/Cart'
+import {CartContextProvider} from '../src/Context/Context'
 
 
 function App() {
   return (
+      <CartContextProvider>
     <ChakraProvider>
       <BrowserRouter>
         <Navbar/>
@@ -19,6 +21,7 @@ function App() {
           </Routes>
       </BrowserRouter>
     </ChakraProvider>
+      </CartContextProvider>
   )
 }
 

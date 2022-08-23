@@ -33,7 +33,7 @@ export const productos = [
             stock:15,
             initial:1,
             color:"rgb(239, 239, 229)",
-           colorLetra:"#000000"       
+            colorLetra:"#000000"       
         },
             {   id: 4,
                 image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035653967-FG37EMPW6EO4CFC2FFEE/Wandering-Barman_Bottle_FOMO.png?format=500w',
