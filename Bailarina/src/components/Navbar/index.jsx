@@ -5,7 +5,6 @@ import {Cart} from '../Cart/Cart'
 import {NavLink} from 'react-router-dom'
 
 
-
 const Navbar = () => {
     return(
     <HStack bg='whiteAlpha.500' h='80px'> 
