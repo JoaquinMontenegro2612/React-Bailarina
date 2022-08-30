@@ -38,8 +38,9 @@ const Cart = () => {
                     <Button color="blue.500" onClick={() => removeProduct(item.id)}><ImCross /></Button>
                 </HStack>
             )}
-
-            <Text>Su total es: $ {totalPrice()}</Text>
+            <Box alignItems='center'>
+            <Text fontWeight='bold' fontSize='xl'>Su total es: $ {totalPrice()}</Text>
+            </Box>
             <Box>
                 <Button color="red.500" onClick={() => cleanCart()}>Vaciar carrito</Button>
             </Box>

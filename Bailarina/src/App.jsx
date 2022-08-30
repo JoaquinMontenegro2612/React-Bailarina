@@ -5,8 +5,7 @@ import { ItemDetailContainer } from '../src/components/ItemDetailContainer/Index
 import { BrowserRouter,Routes, Route,} from 'react-router-dom'
 import { Cart } from './components/Cart/Cart'
 import {CartContextProvider} from '../src/Context/Context'
-
-
+import '../src/Firebase/firebase'
 function App() {
   return (
       <CartContextProvider>
