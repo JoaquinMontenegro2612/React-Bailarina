@@ -1,29 +1,44 @@
 import { useState, useEffect  } from "react";
-import { productos } from "../../Utils/productos"
-import { customFetch }from "../../assets/customFetch"
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { Spinner } from "@chakra-ui/react"
 import { useParams} from 'react-router-dom'
+import { db } from '../../Firebase/firebase'
+import {collection, getDocs} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
-    const [listaDeProducto, setListaDeProducto] = useState ({})
+    const [listaDeProductos, setListaDeProductos] = useState ({})
     const [loading, setLoading] = useState (true)
 
     const {id}= useParams()  
 
-    useEffect(()=>{
-        setLoading(true)
-        customFetch(productos)
-        .then(res => 
+    useEffect(() => {
+
+        const coleccionDeProductos = collection(db, "Productos")
+        const consulta = getDocs(coleccionDeProductos)
+        
+        consulta
+    .then(snapshot=>{
+        const listaDeProductos = snapshot.docs.map(docs=>{
+                    return{
+                    ...docs.data(),
+                    id: docs.id
+                    }
+                })
+                console.log(id);
+                setListaDeProductos(listaDeProductos.find(data => data.id === id))
+                setLoading(false); 
+                    })
+            .catch(err=>
             {
-                setLoading(false)
-                setListaDeProducto(res.find(item => item.id === parseInt(id)))
-        }
-    )}, [])
+            console.log(err);
+            setLoading(false);
+            })
+            },[])
+
     return(
         <>
-        {!loading ? <ItemDetail listaDeProducto={listaDeProducto}/>: <Spinner/>}
+        {!loading ? <ItemDetail listaDeProductos={listaDeProductos}/>: <Spinner/>}
         </>
     )
 }

@@ -1,9 +1,10 @@
 import {Heading, Spinner} from '@chakra-ui/react'
 import { useState, useEffect } from 'react'
-import { productos } from '../../Utils/productos'
-import { customFetch } from '../../assets/customFetch'
 import ItemList from '../itemList/itemList'
 import {useParams} from 'react-router-dom'
+//comienzo uso firebase ↓↓
+import { db } from '../../Firebase/firebase'
+import { collection,getDocs } from 'firebase/firestore'
 
 const ItemListContainer = () => {
     const [listaDeProductos, setListaDeProductos] = useState([])
@@ -12,19 +13,30 @@ const ItemListContainer = () => {
     const {categoria}=useParams()
 
     useEffect(() => {
-      setLoading(false)
-      customFetch(productos)
-        .then(data => {
-          if (categoria) {
-            setLoading(true)
-            setListaDeProductos(data.filter(prod => prod.categoria === categoria))
-          }
-          else{
-            setLoading(true)
-            setListaDeProductos(data)
-          }
-        })
-    }, [categoria])
+
+      const coleccionDeProductos = collection(db, "Productos")
+      const consulta = getDocs(coleccionDeProductos)
+      
+      consulta
+      .then(snapshot=>{
+        const listaDeProductos = snapshot.docs.map(docs=>{
+                    return{
+                    ...docs.data(),
+                    id: docs.id
+                    }
+                })
+                  setListaDeProductos(listaDeProductos);
+                  setLoading(false); 
+                  })
+          .catch(err=>
+            {
+            console.log(err);
+            setLoading(false);
+            })
+          },[])
+
+          
+
 
 
   return (

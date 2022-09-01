@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 import {getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -13,7 +13,5 @@ measurementId: "G-T5F5PQ20B7"
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);// profe/tutor esto me lo trajo solo cuando se armo este pack y el profe no lo tiene asi que no se que funcion cumple
 export const db = getFirestore(app)
-
-console.log(db);
