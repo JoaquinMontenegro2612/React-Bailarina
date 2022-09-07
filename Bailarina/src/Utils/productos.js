@@ -1,6 +1,6 @@
 export const productos = [
 {   id: 1,
-    image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572038572145-87RYG8X9AKDTCR9LD7S4/Swipe+Right?format=500w',
+    imagen:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572038572145-87RYG8X9AKDTCR9LD7S4/Swipe+Right?format=500w',
     producto:'SWIPE RIGHT',
     categoria:"directo",
     detalle:'Date infused Old Fashioned',
@@ -12,7 +12,7 @@ export const productos = [
     colorLetra:"#000000"
 },
     {   id: 2,
-        image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035118091-LFZY7ZSPE0AEGO9A71NX/Wandering-Barman_Bottle_Boomerang.png?format=500w',
+        imagen:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035118091-LFZY7ZSPE0AEGO9A71NX/Wandering-Barman_Bottle_Boomerang.png?format=500w',
         producto:'BOOMERANG',
         categoria:"shacked",
         detalle:'Burnt Maple Old Fashioned',
@@ -24,7 +24,7 @@ export const productos = [
         colorLetra:"#000000"
     },
         {   id: 3,
-            image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016074179-43NNDWEBAKRN08Q7E779/La+Nina?format=500w',
+            imagen:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016074179-43NNDWEBAKRN08Q7E779/La+Nina?format=500w',
             producto:'LA NIÑA',
             categoria:"batido",
             detalle:'Marigold & Kaffir Lime Margarita',
@@ -36,7 +36,7 @@ export const productos = [
             colorLetra:"#000000"       
         },
             {   id: 4,
-                image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035653967-FG37EMPW6EO4CFC2FFEE/Wandering-Barman_Bottle_FOMO.png?format=500w',
+                imagen:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035653967-FG37EMPW6EO4CFC2FFEE/Wandering-Barman_Bottle_FOMO.png?format=500w',
                 producto:'FOMO',
                 categoria:"",
                 detalle:'Organic Vodka Pineapple Sling',
@@ -48,7 +48,7 @@ export const productos = [
                 colorLetra:"#000000"
             },
                 {   id: 5,
-                    image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035510623-8H7S1POYFTF2BI2A0T89/Wandering-Barman_Bottle_Socialite.png?format=500w',
+                    imagen:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572035510623-8H7S1POYFTF2BI2A0T89/Wandering-Barman_Bottle_Socialite.png?format=500w',
                     producto:'SOCIALITE',
                     categoria:"",
                     detalle:'Directo',
@@ -60,7 +60,7 @@ export const productos = [
                     colorLetra:"#000000"
                 },
                     {   id: 6,
-                        image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016118895-CDH5YKQ7EG5Z8RGF8HHC/Wandering-Barman_Bottle_Iron-Lady.png?format=500w',
+                        imagen:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016118895-CDH5YKQ7EG5Z8RGF8HHC/Wandering-Barman_Bottle_Iron-Lady.png?format=500w',
                         producto:'IRON LADY',
                         categoria:"",
                         detalle:'Rose Gin & Hops Sling',
@@ -72,7 +72,7 @@ export const productos = [
                         colorLetra:"#000000"
                     },
                             {   id: 7,
-                                image:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016793130-HMDHB4QNBU2AUKUH9XVE/Wandering-Barman_Bottle_Miss-Casanova.png?format=500w',
+                                imagen:'https://images.squarespace-cdn.com/content/v1/5d28c86af7147800016c2701/1572016793130-HMDHB4QNBU2AUKUH9XVE/Wandering-Barman_Bottle_Miss-Casanova.png?format=500w',
                                 producto:'MISS CASANOVA',
                                 categoria:"",
                                 detalle:'Spicy Hibiscus Daiquiri',

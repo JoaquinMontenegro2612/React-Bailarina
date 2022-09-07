@@ -1,7 +1,8 @@
-import { HStack, Box, Spacer, Text, Button} from "@chakra-ui/react"
+import { HStack, Box, Spacer, Text, Button,Image} from "@chakra-ui/react"
 import { NavLink } from "react-router-dom"
 import { ImCross } from "react-icons/im"
 import { useCartContext } from '../../Context/Context';
+
 
 const Cart = () => {
 
@@ -26,12 +27,13 @@ const Cart = () => {
             {cartList.map(item =>
                 <HStack key={item.id} border="2px" w="100vw" m={1} p={2} rounded="20px" >
                     <Box width="100px" marginRight={2}>
-                        <img src={item.image} alt={item.descripcion} />
+                        <Image src={item.imagen} />
                     </Box>
                     <HStack>
-                        <Text>{item.descripcion}</Text>
+                        <Text>{item.nombre}</Text>
+                        <br />
                         <Text>Cantidad : {item.cantidad}</Text>
-                        <Spacer />
+                        <br />
                         <Text>Precio por unid.: ${item.precio}</Text>
                     </HStack>
 <Spacer />

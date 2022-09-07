@@ -25,7 +25,6 @@ const ItemDetailContainer = () => {
                     id: docs.id
                     }
                 })
-                console.log(id);
                 setListaDeProductos(listaDeProductos.find(data => data.id === id))
                 setLoading(false); 
                     })

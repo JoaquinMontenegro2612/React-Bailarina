@@ -5,10 +5,9 @@ import {ItemCount}  from '../ItemCount'
 import  {useCartContext}  from  '../../Context/Context'
 
 const ItemDetail = ({ listaDeProductos }) => {
-        console.log(listaDeProductos);
     const [isAdded,setIsAdded]= useState(false)
 
-    const { addToCart } = useCartContext()
+    const { addToCart, actualizarPedidosDB} = useCartContext()
 
     const onAdd=(quantity) => {
         addToCart(listaDeProductos, quantity)

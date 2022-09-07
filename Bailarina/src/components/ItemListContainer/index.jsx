@@ -4,8 +4,9 @@ import ItemList from '../itemList/itemList'
 import {useParams} from 'react-router-dom'
 //comienzo uso firebase ↓↓
 import { db } from '../../Firebase/firebase'
-import { collection, getDocs , query , where } from "firebase/firestore"
+import { collection, getDocs , query , where,addDoc } from "firebase/firestore"
 import {toast} from "react-toastify"
+import { productos } from '../../Utils/productos'
 
 const ItemListContainer = () => {
     const [listaDeProductos, setListaDeProductos] = useState([])
@@ -17,7 +18,11 @@ const ItemListContainer = () => {
       if (!id){
       const coleccionDeProductos = collection(db, "Productos")
       const consulta = getDocs(coleccionDeProductos)
-      
+      // //llenado de tabla por unica vez
+      // productos.forEach(element => {
+      //   const nuevoProducto = addDoc(coleccionDeProductos, element)
+      // });
+
       consulta
       .then(snapshot=>{
         const listaDeProductos = snapshot.docs.map(docs=>{
@@ -27,7 +32,7 @@ const ItemListContainer = () => {
                     }
                 })
                   setListaDeProductos(listaDeProductos);
-                  setLoading(false); 
+                  setLoading(true); 
                   })
           .catch(err=>
             {
