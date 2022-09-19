@@ -64,7 +64,7 @@ return (
     <Input type="text" placeholder="Nombre" onChange={handleChangeNombre} value={nombre} />
     <Input type="text" placeholder="Apellido" onChange={handleChangeApellido} value={apellido} />
 
-    <Button onClick={handleConfirm}>guardar</Button>
+    <Button onClick={handleConfirm}>Gsuardar</Button>
 
     {/* <List usuarios={usuarios} /> */}
 

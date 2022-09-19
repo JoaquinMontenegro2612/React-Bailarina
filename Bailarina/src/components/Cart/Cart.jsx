@@ -1,7 +1,8 @@
-import { HStack, Box, Spacer, Text, Button,Image} from "@chakra-ui/react"
+import { HStack, Box, Spacer, Text, Button,Image, ButtonGroup} from "@chakra-ui/react"
 import { NavLink } from "react-router-dom"
 import { ImCross } from "react-icons/im"
 import { useCartContext } from '../../Context/Context';
+// import {PaymentForm} from './PaymentForm'
 
 
 const Cart = () => {
@@ -15,7 +16,7 @@ const Cart = () => {
                 <Text>
                     No tenes productos en el Carrito
                 </Text>
-                <NavLink to='/'><Button color="blue.500">Home</Button></NavLink>
+                <NavLink to='/'><Button color="blue.500">Inicio</Button></NavLink>
             </HStack>
         </Box>
         )
@@ -44,7 +45,12 @@ const Cart = () => {
             <Text fontWeight='bold' fontSize='xl'>Su total es: $ {totalPrice()}</Text>
             </Box>
             <Box>
+                <ButtonGroup>
                 <Button color="red.500" onClick={() => cleanCart()}>Vaciar carrito</Button>
+                <NavLink to='/PaymentForm'>
+                        <Button w='250px'>Pagar</Button>
+                    </NavLink>
+                </ButtonGroup>
             </Box>
         </Box>
     )

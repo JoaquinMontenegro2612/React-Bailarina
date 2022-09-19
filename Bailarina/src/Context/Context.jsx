@@ -43,7 +43,7 @@ export function CartContextProvider ({children})
     const removeProduct = (id) => {setCartList(cartList.filter(prod => prod.id != id))}
     const cleanCart = () => {setCartList([])}
     const totalPrice = () =>
-    {debugger;
+    {
         return cartList.reduce((acc, producto) => acc += (producto.precio * producto.cantidad), 0)
     }
     const totalQuantity =()=> {
@@ -55,7 +55,7 @@ export function CartContextProvider ({children})
         //Traigo los pedidos existentes
         let listaDePedidos;
          //traigo los pedidos de la tabla pedidos
-         consultaDePedidos.then(snapshot=>{
+        consultaDePedidos.then(snapshot=>{
             listaDePedidos = snapshot.docs.map(docs=>{
                 return{
                 ...docs.data(),

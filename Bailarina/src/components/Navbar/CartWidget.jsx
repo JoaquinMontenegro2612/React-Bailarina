@@ -1,20 +1,18 @@
 import {BsCartCheckFill} from 'react-icons/bs';
 import {NavLink} from 'react-router-dom'
 import { useCartContext } from "../../Context/Context";
+import { Text } from '@chakra-ui/react';
 
 
 
-const CartWidget = ({type}) => {
+const CartWidget = () => {
 
-  const { cantidad } = useCartContext()
+  const { totalQuantity } = useCartContext()
 
   return (
     <>
-    {type=="header"?(
     <NavLink to='/Cart'>
-    <BsCartCheckFill/>
-    {cantidad}
-    </NavLink>):<></>}
+    <BsCartCheckFill/><Text>{totalQuantity()}</Text></NavLink>
   </>
   )
 }
