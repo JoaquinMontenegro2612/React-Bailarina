@@ -1,13 +1,20 @@
-import { HStack, Box, Spacer, Text, Button,Image, ButtonGroup} from "@chakra-ui/react"
+import { HStack, Box, Spacer, Text, Button,Image, ButtonGroup, Input,FormControl,FormLabel,Center} from "@chakra-ui/react"
 import { NavLink } from "react-router-dom"
 import { ImCross } from "react-icons/im"
 import { useCartContext } from '../../Context/Context';
-// import {PaymentForm} from './PaymentForm'
+// // ES6 Modules or TypeScript
+// import Swal from 'sweetalert2'
+// // CommonJS
+
 
 
 const Cart = () => {
-
+    
     const { cartList, totalPrice, cleanCart, removeProduct } = useCartContext()
+    // const Swal = require('sweetalert2')
+    // const ToPay=()=>{
+
+    // }
 
     if (cartList.length === 0) {
         return (
@@ -41,15 +48,29 @@ const Cart = () => {
                     <Button color="blue.500" onClick={() => removeProduct(item.id)}><ImCross /></Button>
                 </HStack>
             )}
-            <Box alignItems='center'>
+            <Center >
             <Text fontWeight='bold' fontSize='xl'>Su total es: $ {totalPrice()}</Text>
-            </Box>
+            </Center>
+            <Center >
+                <Text fontWeight='bold' fontSize='xl'>
+                    Cargue sus datos
+                </Text>
+                <FormControl id="DatosCliente">
+                    <FormLabel>Nombre y Apellido</FormLabel>
+                        <Input type="name"/>
+                    <FormLabel>Email</FormLabel>
+                        <Input type="email"/>
+                    <FormLabel >Repita su Email</FormLabel>
+                        <Input type="email"/>
+                    <FormLabel>Numero de Contacto</FormLabel>
+                        <Input type="number"/>
+                </FormControl>
+            </Center>
+<Spacer />
             <Box>
                 <ButtonGroup>
                 <Button color="red.500" onClick={() => cleanCart()}>Vaciar carrito</Button>
-                <NavLink to='/PaymentForm'>
-                        <Button w='250px'>Pagar</Button>
-                    </NavLink>
+                        <Button w='250px'>Confirmar Compra</Button>
                 </ButtonGroup>
             </Box>
         </Box>

@@ -1,4 +1,4 @@
-import { ChakraProvider, Heading} from '@chakra-ui/react'
+import { ChakraProvider} from '@chakra-ui/react'
 import { Navbar } from './components/Navbar'
 import {ItemListContainer} from './components/ItemListContainer/index'
 import { ItemDetailContainer } from '../src/components/ItemDetailContainer/Index'
@@ -8,6 +8,7 @@ import {CartContextProvider} from '../src/Context/Context'
 import '../src/Firebase/firebase'
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
       <CartContextProvider>
