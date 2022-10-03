@@ -1,20 +1,12 @@
 import { HStack, Box, Spacer, Text, Button,Image, ButtonGroup, Input,FormControl,FormLabel,Center} from "@chakra-ui/react"
 import { NavLink } from "react-router-dom"
+import { Usuario } from "../Cart/Usuario";
 import { ImCross } from "react-icons/im"
 import { useCartContext } from '../../Context/Context';
-// // ES6 Modules or TypeScript
-// import Swal from 'sweetalert2'
-// // CommonJS
-
-
 
 const Cart = () => {
-    
-    const { cartList, totalPrice, cleanCart, removeProduct } = useCartContext()
-    // const Swal = require('sweetalert2')
-    // const ToPay=()=>{
 
-    // }
+    const { cartList, totalPrice, cleanCart, removeProduct } = useCartContext();
 
     if (cartList.length === 0) {
         return (
@@ -51,29 +43,12 @@ const Cart = () => {
             <Center >
             <Text fontWeight='bold' fontSize='xl'>Su total es: $ {totalPrice()}</Text>
             </Center>
-            <Center >
-                <Text fontWeight='bold' fontSize='xl'>
-                    Cargue sus datos
-                </Text>
-                <FormControl id="DatosCliente">
-                    <FormLabel>Nombre y Apellido</FormLabel>
-                        <Input type="name"/>
-                    <FormLabel>Email</FormLabel>
-                        <Input type="email"/>
-                    <FormLabel >Repita su Email</FormLabel>
-                        <Input type="email"/>
-                    <FormLabel>Numero de Contacto</FormLabel>
-                        <Input type="number"/>
-                </FormControl>
-            </Center>
 <Spacer />
             <Box>
-                <ButtonGroup>
                 <Button color="red.500" onClick={() => cleanCart()}>Vaciar carrito</Button>
-                        <Button w='250px'>Confirmar Compra</Button>
-                </ButtonGroup>
             </Box>
-        </Box>
+            <Usuario/>
+        </Box> 
     )
 }
 

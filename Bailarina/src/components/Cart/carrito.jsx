@@ -63,11 +63,7 @@ return (
 
     <Input type="text" placeholder="Nombre" onChange={handleChangeNombre} value={nombre} />
     <Input type="text" placeholder="Apellido" onChange={handleChangeApellido} value={apellido} />
-
-    <Button onClick={handleConfirm}>Gsuardar</Button>
-
-    {/* <List usuarios={usuarios} /> */}
-
+    <Button onClick={handleConfirm}>Guardar</Button>
 </HStack>
 )
 }

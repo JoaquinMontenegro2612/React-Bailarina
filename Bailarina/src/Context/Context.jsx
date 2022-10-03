@@ -1,7 +1,6 @@
 import { createContext,useState, useContext } from 'react'
 import { db } from '../Firebase/firebase'
 import { collection, getDocs ,serverTimestamp,addDoc,doc, updateDoc } from "firebase/firestore"
-import { async } from '@firebase/util'
 
 
 const CartContext = createContext({}) 

@@ -5,7 +5,7 @@ const Item = ({productos}) => {
     return(
         <HStack id="productContainer" bg={productos.color} color={productos.colorLetra}>
             <Box mx='45px'>
-            <Heading id="titulo" >{productos.nombre}</Heading>
+            <Heading id="titulo" >{productos.producto}</Heading>
             </Box>
             <Image id="imagenes" src={productos.imagen} alt="imagen"></Image>
                 <VStack>
