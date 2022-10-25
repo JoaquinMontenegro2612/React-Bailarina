@@ -1,4 +1,4 @@
-import { HStack, Box, Spacer, Text, Button,Image, ButtonGroup, Input,FormControl,FormLabel,Center} from "@chakra-ui/react"
+import { HStack,VStack, Box, Spacer, Text, Button,Image, ButtonGroup, Input,FormControl,FormLabel,Center} from "@chakra-ui/react"
 import { NavLink } from "react-router-dom"
 import { Usuario } from "../Cart/Usuario";
 import { ImCross } from "react-icons/im"
@@ -10,14 +10,13 @@ const Cart = () => {
 
     if (cartList.length === 0) {
         return (
-        <Box>
-            <HStack>
-                <Text>
-                    No tenes productos en el Carrito
-                </Text>
-                <NavLink to='/'><Button color="blue.500">Inicio</Button></NavLink>
-            </HStack>
-        </Box>
+        <Center padding={70}>
+            <VStack>
+                <Text fontSize='3xl' border="15px" >You need a Coctail, Baby?</Text>
+                <Image src='https://www.drinkinginamerica.com/wp-content/uploads/2016/11/giphy-12.gif' w="50vw" h='75vh'/>
+                <NavLink to='/'><Button color='white' bg='blue'>Volver al Inicio</Button></NavLink>
+            </VStack>
+        </Center>
         )
     }
 

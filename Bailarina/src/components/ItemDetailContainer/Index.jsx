@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         const consulta = getDocs(coleccionDeProductos)
         
         consulta
-    .then(snapshot=>{
+        .then(snapshot=>{
         const listaDeProductos = snapshot.docs.map(docs=>{
                     return{
                     ...docs.data(),

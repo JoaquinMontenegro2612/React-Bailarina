@@ -1,73 +1,48 @@
-import {Heading, Spinner} from '@chakra-ui/react'
+  import { Heading, Spinner } from '@chakra-ui/react'
 import { useState, useEffect } from 'react'
 import ItemList from '../itemList/itemList'
-import {useParams} from 'react-router-dom'
-//comienzo uso firebase ↓↓
+import { useParams } from 'react-router-dom'
 import { db } from '../../Firebase/firebase'
-import { collection, getDocs , query , where,addDoc } from "firebase/firestore"
-import {toast} from "react-toastify"
-import { productos } from '../../Utils/productos'
+import { collection, getDocs} from "firebase/firestore"
+// , query , where
+// import {toast} from "react-toastify"
 
 const ItemListContainer = () => {
     const [listaDeProductos, setListaDeProductos] = useState([])
     const [loading, setLoading] = useState(false)
-    const {id}=useParams()
+    const { categoria } = useParams("/")
   
-
     useEffect(() => {
-      if (!id){
+      // if (!id){
       const coleccionDeProductos = collection(db, "Productos")
       const consulta = getDocs(coleccionDeProductos)
-      // //llenado de tabla por unica vez
-      // productos.forEach(element => {
-      //   const nuevoProducto = addDoc(coleccionDeProductos, element)
-      // });
-
       consulta
-      .then(snapshot=>{
-        const listaDeProductos = snapshot.docs.map(docs=>{
-                    return{
-                    ...docs.data(),
-                    id: docs.id
-                    }
-                })
-                  setListaDeProductos(listaDeProductos);
-                  setLoading(true); 
-                  })
-          .catch(err=>
-            {
-            console.log(err);
-            setLoading(false);
-            })
-          } else {
-            const coleccionDeProductos = collection(db, "Productos")
-            const filtro = query(coleccionDeProductos,
-              where("categoria","==",id),
-              where("stock",">",10))
+      .then(snapshot => {
+        if (categoria) {
+          setLoading(true)
 
-            const consulta = getDocs(filtro)
+          const prod = snapshot.docs.map(doc => {
+            return {
+              ...doc.data(),
+              id: doc.id
+            }      
+          })
+          setListaDeProductos(prod.filter(productos => productos.categoria === categoria))         
+        }else{
+          setLoading(true)
 
-            consulta
-            .then(snapshot=>{
-              const listaDeProductos = snapshot.docs.map(docs=>{
-                          return{
-                          ...docs.data(),
-                          id: docs.id
-                          }
-                      })
-                      setListaDeProductos(listaDeProductos);
-                      setLoading(false);
-                      })
-                      .catch(err=>
-                        {
-                        toast.error("Error al cargar los cocteles")
-                        })
-                      }
-},[id])
-
-  
-
-
+          const prod = snapshot.docs.map(doc => {
+            return {
+              ...doc.data(),
+              id: doc.id
+            }      
+          })
+          setListaDeProductos(prod)
+        }
+      })
+  .catch(err => {console.log(err)})
+} , [categoria]
+)
 
   return (
   <>
@@ -78,3 +53,42 @@ const ItemListContainer = () => {
 }
 
 export {ItemListContainer}
+
+//       .then(snapshot=>{
+//         const listaDeProductos = snapshot.docs.map(docs=>{
+  //                     return{
+    //                     ...docs.data(),
+//                     id: docs.id
+//                     }
+//                 })
+//                   setListaDeProductos(listaDeProductos);
+//                   setLoading(true); 
+//                   })
+//           .catch(err=>
+//             {
+//             console.log(err);
+//             setLoading(false);
+//             })
+//           } else {
+//             const coleccionDeProductos = collection(db, "Productos")
+//             const filtro = query(coleccionDeProductos,
+//               where("categoria","==",id),
+//               where("stock",">",10))
+//             const consulta = getDocs(filtro)
+//             consulta
+//             .then(snapshot=>{
+//               const listaDeProductos = snapshot.docs.map(docs=>{
+//                           return{
+//                           ...docs.data(),
+//                           id: docs.id
+//                           }
+//                       })
+//                       setListaDeProductos(listaDeProductos);
+//                       setLoading(false);
+//                       })
+//                       .catch(err=>
+//                         {
+//                         toast.error("Error al cargar los cocteles")
+//                         })
+//                       }
+// },[id])

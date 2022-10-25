@@ -7,13 +7,11 @@ import  {useCartContext}  from  '../../Context/Context'
 const ItemDetail = ({ listaDeProductos }) => {
     const [isAdded,setIsAdded]= useState(false)
 
-    const { addToCart, actualizarPedidosDB} = useCartContext()
-
+    const { addToCart} = useCartContext()
     const onAdd=(quantity) => {
         addToCart(listaDeProductos, quantity)
         setIsAdded(true)
     }
-
     return(
         <HStack bg={listaDeProductos.color} color={listaDeProductos.colorLetra}>
                 <Image src={listaDeProductos.imagen} alt="Cover"/>

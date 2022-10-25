@@ -1,11 +1,13 @@
-import { HStack,VStack, Button, Text, Image, Heading, Box} from "@chakra-ui/react"
+import { HStack,VStack, Button, Text, Image, Heading, Box,Spacer} from "@chakra-ui/react"
 import {NavLink} from 'react-router-dom'
 
 const Item = ({productos}) => {
     return(
+        
         <HStack id="productContainer" bg={productos.color} color={productos.colorLetra}>
+        <Spacer/>
             <Box mx='45px'>
-            <Heading id="titulo" >{productos.producto}</Heading>
+            <Heading id="productos" >{productos.producto}</Heading>
             </Box>
             <Image id="imagenes" src={productos.imagen} alt="imagen"></Image>
                 <VStack>

@@ -1,20 +1,18 @@
 import { ChakraProvider} from '@chakra-ui/react'
 import { Navbar } from './components/Navbar'
-import {ItemListContainer} from './components/ItemListContainer/index'
+import { ItemListContainer } from './components/ItemListContainer/index'
 import { ItemDetailContainer } from '../src/components/ItemDetailContainer/Index'
 import { BrowserRouter,Routes, Route,} from 'react-router-dom'
 import { Cart } from './components/Cart/Cart'
-import {CartContextProvider} from '../src/Context/Context'
-import '../src/Firebase/firebase'
+import { CartContextProvider } from '../src/Context/Context'
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
       <CartContextProvider>
     <ChakraProvider>
       <BrowserRouter>
-        <Navbar/>
+            <Navbar/>
           <Routes>
             <Route path='/' element={<ItemListContainer/>}/>
             <Route path='/categoria/:categoria' element={<ItemListContainer/>}/>
