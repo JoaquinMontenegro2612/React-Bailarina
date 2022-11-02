@@ -23,39 +23,31 @@ const Usuario = () => {
 
     const nombreCompleto = `${nombre} ${apellido}`
     console.log(ordenCompra);
-
     const handleChangeNombre = (e) => {
         e.preventDefault()
         setNombre(e.target.value)
     }
-
     const handleChangeApellido = (e) => {
         e.preventDefault()
         setApellido(e.target.value)
     }
-
     const handleChangeEmail = (e) => {
         e.preventDefault()
         setEmail(e.target.value)
     }
-
     const handleChangeEmail2 = (e) => {
         e.preventDefault()
         setEmail2(e.target.value)
     }
-
     const handleChangeCelular = (e) => {
         e.preventDefault()
         setCelular(e.target.value)
     }
-
     const handleConfirm = () => {
-
             if(nombre === "" || apellido === "" || email === "" || celular === ""){
                 alert(`Completa todos los campos`)
             }
-            //al celular hay que ponerle la verficacion otra vez a 10
-            else if(celular.length === 1 && email === email2){
+            else if(celular.length === 10 && email === email2){
             const orden = {
                 items: {
                     id: cartList.map(item => item.id),
@@ -71,7 +63,6 @@ const Usuario = () => {
                 total: totalPrice(),
                 date: serverTimestamp()
             }
-            
             const ordersCollection = collection(db, "Pedidos")
             const consulta = addDoc(ordersCollection, orden)
             consulta
